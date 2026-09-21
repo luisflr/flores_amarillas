@@ -1,0 +1,11 @@
+# Configuración de despliegue para Netlify
+[build]
+  # Compila el CSS de Tailwind (genera src/output.css)
+  command = "npm run build"
+  # Carpeta que se publica (donde vive index.html)
+  publish = "src"
+ 
+[build.environment]
+  # Tailwind v4 requiere Node 20+
+  NODE_VERSION = "20"
+ 
