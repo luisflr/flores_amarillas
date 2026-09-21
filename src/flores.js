@@ -1,9 +1,3 @@
-/* Flores Amarillas — interacciones
-   - Reinicio del florecimiento (Volver a florecer)
-   - Partículas (pétalos flotando)
-   - Reproductor: simulación visual (ondas), sin audio embebido
-   - Dedicatoria personalizable con persistencia (localStorage)
-*/
 (() => {
   const $ = (s, c = document) => c.querySelector(s);
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -12,8 +6,6 @@
   const bouquet = $("#bouquet");
   function bloom() {
     bouquet.classList.remove("bloom");
-    // Forzar reflow para reiniciar la animación. OJO: en un <svg> (SVGElement)
-    // offsetWidth es undefined y NO dispara reflow; getBoundingClientRect() sí.
     bouquet.getBoundingClientRect();
     bouquet.classList.add("bloom");
   }
