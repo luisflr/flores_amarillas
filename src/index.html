@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Flores Amarillas · 21 de Septiembre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="min-h-full flex flex-col relative page-glow">
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- TOP BAR -->
+    <header class="relative z-10 w-full">
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between gap-3"
+      >
+        <div
+          class="flex items-center gap-2.5 rounded-full bg-white/60 backdrop-blur px-3.5 py-1.5 border border-gold-deep/15"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="text-gold-deep shrink-0"
+          >
+            <path
+              d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+            <circle cx="12" cy="12" r="3.4" fill="currentColor" />
+          </svg>
+          <span class="eyebrow text-[11px] font-semibold text-ink/80 uppercase"
+            >21 de Septiembre</span
+          >
+          <span class="hidden sm:inline text-gold-deep/50">·</span>
+          <span class="hidden sm:inline font-serif italic text-[13px] text-leaf"
+            >Flores Amarillas</span
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="eyebrow text-[11px] font-medium text-muted uppercase hidden sm:inline"
+            >Primavera 2026</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main
+      class="relative z-10 flex-1 w-full max-w-7xl mx-auto px-5 sm:px-8 flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-6 lg:gap-10 pb-8"
+    >
+      <div class="order-1 lg:hidden text-center pt-2">
+        <h1 class="font-serif text-4xl sm:text-5xl text-leaf leading-tight">
+          Flores Amarillas
+        </h1>
+        <p class="font-serif italic text-muted mt-1.5">
+          Para alguien profundamente especial
+        </p>
+      </div>
+
+      <!-- Columna del ramo -->
+      <section
+        class="order-2 lg:order-1 relative flex items-center justify-center py-2 lg:py-6"
+      >
+        <div class="bouquet-glow absolute inset-0 -m-6 lg:-m-10"></div>
+        <div
+          class="bouquet-sway relative w-full max-w-67.5 sm:max-w-75 lg:max-w-105"
+        >
+          <!-- ⇩⇩⇩ PEGA AQUÍ EL SVG DEL PASO 5 (con class="bloom") ⇩⇩⇩ -->
+          <svg
+            id="bouquet"
+            class="bloom w-full h-auto"
+            viewBox="0 0 400 580"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Ramo de tulipanes amarillos atados con un lazo dorado"
+          >
+            <defs>
+              <linearGradient id="petalFront" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FCDC5C" />
+                <stop offset="0.55" stop-color="#F6C324" />
+                <stop offset="1" stop-color="#E9A400" />
+              </linearGradient>
+              <linearGradient id="petalSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F4C433" />
+                <stop offset="1" stop-color="#D99400" />
+              </linearGradient>
+              <linearGradient id="petalHi" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFF3C4" stop-opacity="0.95" />
+                <stop offset="1" stop-color="#FCE08A" stop-opacity="0.15" />
+              </linearGradient>
+              <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#4B7A3A" />
+                <stop offset="1" stop-color="#2C5124" />
+              </linearGradient>
+              <linearGradient id="bow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F6C63C" />
+                <stop offset="1" stop-color="#C6890B" />
+              </linearGradient>
+              <radialGradient id="bowKnot" cx="0.4" cy="0.35" r="0.8">
+                <stop offset="0" stop-color="#FBD65E" />
+                <stop offset="1" stop-color="#B8790A" />
+              </radialGradient>
+              <linearGradient id="stemGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3E6E33" />
+                <stop offset="1" stop-color="#28481F" />
+              </linearGradient>
+            </defs>
+            <g
+              id="stems"
+              stroke="url(#stemGrad)"
+              stroke-width="5.5"
+              stroke-linecap="round"
+              fill="none"
+            >
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 200.0 290.0 200 150"
+                style="animation-delay: 0.05s"
+              />
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 169.0 313.0 150 196"
+                style="animation-delay: 0.1s"
+              />
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 232.0 316.0 252 202"
+                style="animation-delay: 0.14s"
+              />
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 145.0 344.0 118 258"
+                style="animation-delay: 0.18s"
+              />
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 256.0 347.0 284 264"
+                style="animation-delay: 0.22s"
+              />
+              <path
+                class="stem"
+                pathLength="1"
+                d="M 200 430 Q 204.5 324.0 205 218"
+                style="animation-delay: 0.26s"
+              />
+            </g>
+            <g id="leaves">
+              <path
+                class="leaf"
+                d="M 200 428 C 150 360 120 300 96 250 C 118 300 150 372 205 430 Z"
+                fill="url(#leaf)"
+                style="animation-delay: 0.75s"
+              />
+              <path
+                class="leaf"
+                d="M 200 428 C 250 360 286 300 312 250 C 288 306 250 375 200 430 Z"
+                fill="url(#leaf)"
+                style="animation-delay: 0.82s"
+              />
+              <path
+                class="leaf"
+                d="M 198 430 C 168 380 150 320 150 262 C 176 320 196 380 206 430 Z"
+                fill="url(#leaf)"
+                style="animation-delay: 0.9s"
+              />
+              <path
+                class="leaf"
+                d="M 202 430 C 236 384 258 322 262 268 C 244 324 220 384 206 430 Z"
+                fill="url(#leaf)"
+                style="animation-delay: 0.96s"
+              />
+            </g>
+            <g id="flowers">
+              <g
+                class="tulip"
+                transform="translate(200 138) scale(1.05) rotate(0 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.05s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -20deg; animation-delay: 1.11s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 20deg; animation-delay: 1.17s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.23s"
+                  />
+                  <path
+                    class="petal-hi"
+                    d="M 0 -8 C -7 -22 -7 -54 0 -68 C 7 -54 7 -22 0 -8 Z"
+                    fill="url(#petalHi)"
+                    style="animation-delay: 1.29s"
+                  />
+                </g>
+              </g>
+              <g
+                class="tulip"
+                transform="translate(150 182) scale(0.95) rotate(-4 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.2s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -17deg; animation-delay: 1.26s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 17deg; animation-delay: 1.32s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.38s"
+                  />
+                </g>
+              </g>
+              <g
+                class="tulip"
+                transform="translate(252 188) scale(0.95) rotate(4 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.28s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -17deg; animation-delay: 1.34s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 17deg; animation-delay: 1.4s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.46s"
+                  />
+                </g>
+              </g>
+              <g
+                class="tulip"
+                transform="translate(118 246) scale(0.85) rotate(-10 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.4s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -10deg; animation-delay: 1.46s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 10deg; animation-delay: 1.52s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.58s"
+                  />
+                </g>
+              </g>
+              <g
+                class="tulip"
+                transform="translate(284 252) scale(0.85) rotate(10 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.48s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -10deg; animation-delay: 1.54s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 10deg; animation-delay: 1.6s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.66s"
+                  />
+                </g>
+              </g>
+              <g
+                class="tulip"
+                transform="translate(205 205) scale(0.78) rotate(2 0 0)"
+              >
+                <g class="tulip-grow" style="animation-delay: 1.55s">
+                  <path
+                    class="petal petal-l"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: -9deg; animation-delay: 1.61s"
+                  />
+                  <path
+                    class="petal petal-r"
+                    d="M 0 0 C -16 -10 -17 -44 0 -72 C 17 -44 16 -10 0 0 Z"
+                    fill="url(#petalSide)"
+                    style="--flare: 9deg; animation-delay: 1.67s"
+                  />
+                  <path
+                    class="petal petal-c"
+                    d="M 0 0 C -18 -12 -20 -52 0 -84 C 20 -52 18 -12 0 0 Z"
+                    fill="url(#petalFront)"
+                    style="--flare: 0deg; animation-delay: 1.73s"
+                  />
+                </g>
+              </g>
+            </g>
+            <g class="bow">
+              <path
+                class="ribbon-tail"
+                d="M 198 436 C 180 470 172 500 150 530 C 168 502 188 476 202 442 Z"
+                fill="url(#bow)"
+              />
+              <path
+                class="ribbon-tail"
+                d="M 202 436 C 220 470 228 500 250 530 C 232 502 212 476 198 442 Z"
+                fill="url(#bow)"
+              />
+              <path
+                class="ribbon-loop"
+                d="M 200 432 C 160 404 138 416 148 442 C 158 462 190 450 200 436 Z"
+                fill="url(#bow)"
+              />
+              <path
+                class="ribbon-loop"
+                d="M 200 432 C 240 404 262 416 252 442 C 242 462 210 450 200 436 Z"
+                fill="url(#bow)"
+              />
+              <ellipse
+                class="bow-knot"
+                cx="200"
+                cy="435"
+                rx="11"
+                ry="13"
+                fill="url(#bowKnot)"
+              />
+            </g>
+          </svg>
+          <!-- ⇧⇧⇧ FIN SVG ⇧⇧⇧ -->
+
+          <p
+            class="text-center text-[13px] text-muted mt-2 flex items-center justify-center gap-1.5 lg:hidden"
+          >
+            <span class="text-gold-deep">✿</span> Un ramo eterno de luz y
+            primavera
+          </p>
+        </div>
+      </section>
+
+      <!-- Columna del mensaje -->
+      <section class="order-3 lg:order-2">
+        <div
+          class="card-soft lg:shadow-none! rounded-[28px] bg-white/80 backdrop-blur lg:bg-transparent lg:backdrop-blur-none px-6 py-7 sm:px-8 sm:py-8 lg:p-0 border border-white/60 lg:border-0"
+        >
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-gold-deep/25 bg-gold/10 px-3.5 py-1.5 mb-5"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="text-gold-deep"
+            >
+              <path
+                d="M12 2l1.6 4.8L18 8l-4.4 1.2L12 14l-1.6-4.8L6 8l4.4-1.2L12 2z"
+                fill="currentColor"
+              />
+            </svg>
+            <span
+              class="eyebrow text-[11px] font-semibold text-gold-deep uppercase"
+              >Tradición de amor y luz</span
+            >
+          </div>
+
+          <blockquote
+            class="font-serif text-ink text-3xl sm:text-4xl lg:text-[3.05rem] leading-[1.12] tracking-tight"
+          >
+            <span class="quote-marks text-gold-deep/70">“</span
+            ><span id="quoteText"
+              >Gracias por estar siempre a mi lado, por compartir conmigo cada
+              momento y por hacer más bonito mi camino. </span
+            ><span class="quote-marks text-gold-deep/70">”</span>
+          </blockquote>
+
+          <div
+            class="h-0.75 w-16 rounded-full bg-linear-to-r from-gold to-gold-deep my-6"
+          ></div>
+
+          <p
+            id="complementaryMsg"
+            class="font-serif italic text-muted text-lg sm:text-xl leading-relaxed max-w-[46ch]"
+          >
+            Hoy te regalo estas flores amarillas, pero lo que realmente quiero
+            regalarte es una promesa: seguir caminando contigo, seguir creciendo
+            juntos y construir ese futuro que tanto anhelamos.
+          </p>
+
+          <div
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-leaf/8 border border-leaf/15 px-3 py-1.5 text-[13px] text-leaf"
+          >
+            💚 Con todo mi corazón
+          </div>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3 sm:items-center">
+            <button
+              id="reBloomBtn"
+              class="btn-bloom text-white font-medium rounded-full px-6 py-3.5 flex items-center justify-center gap-2.5 transition"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3.5 12a8.5 8.5 0 1 1 2.5 6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M6 22v-5h5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Volver a florecer
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="relative z-10 w-full text-center py-6 text-[12px] text-muted"
+    >
+      <span class="eyebrow uppercase"
+        >Flores Amarillas · 21 de Septiembre · Para ti pequeña</span
+      >
+    </footer>
+
+    <script src="./flores.js" defer></script>
+  </body>
+</html>

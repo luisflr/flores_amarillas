@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+/* ===== CONFIG TAILWIND v4 (CSS-first, reemplaza tailwind.config.js) ===== */
+@theme {
+  --color-ivory: #fff8f5;
+  --color-cream: #fbefdd;
+  --color-gold: #f3b700;
+  --color-amber: #e9a400;
+  --color-gold-deep: #b8860b;
+  --color-leaf: #2c5124;
+  --color-ink: #2a2018;
+  --color-muted: #7a6f63;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* ===== TOKENS / BASE ===== */
+:root {
+  --glow: rgba(243, 183, 0, 0.3);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-ivory: #fff8f5;
+    --color-ink: #2a2018;
+  }
+}
+
+.page-glow {
+  background: radial-gradient(
+    60% 50% at 50% 42%,
+    rgba(243, 183, 0, 0.14),
+    transparent 70%
+  );
+}
+.bouquet-glow {
+  background: radial-gradient(closest-side, var(--glow), transparent 74%);
+}
+.eyebrow {
+  letter-spacing: 0.22em;
+}
+.quote-marks {
+  font-family: var(--font-serif);
+}
+
+/* ===== ANIMACIÓN DE FLORECIMIENTO =====
+   Estado base = FLORECIDO (fallback sin JS y reduced-motion).
+   .bloom "arma" las animaciones; el animation-delay inline por elemento
+   gana sobre el 0s del shorthand -> entrada escalonada. */
+#bouquet .stem {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+#bouquet .leaf {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+#bouquet .tulip-grow {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+#bouquet .petal {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transform: rotate(var(--flare, 0deg));
+}
+#bouquet .petal-hi {
+  opacity: 1;
+}
+#bouquet .bow {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes stemDraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes leafGrow {
+  from {
+    transform: scaleY(0) scaleX(0.55);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes budGrow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes petalOpen {
+  from {
+    transform: rotate(0deg) scale(0.35);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(var(--flare, 0deg)) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bowIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#bouquet.bloom .stem {
+  animation: stemDraw 0.9s ease-out both;
+}
+#bouquet.bloom .leaf {
+  animation: leafGrow 0.85s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+}
+#bouquet.bloom .tulip-grow {
+  animation: budGrow 0.5s ease-out both;
+}
+#bouquet.bloom .petal {
+  animation: petalOpen 0.7s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+}
+#bouquet.bloom .petal-hi {
+  animation: fadeIn 0.6s ease-out both;
+}
+#bouquet.bloom .bow {
+  animation: bowIn 0.55s 0.95s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-0.6deg);
+  }
+  50% {
+    transform: rotate(0.6deg);
+  }
+}
+.bouquet-sway {
+  transform-origin: 50% 90%;
+  animation: sway 7s ease-in-out infinite;
+}
+
+/* ===== PARTÍCULAS ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  top: -6%;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  92% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(var(--drift, 20px), 112vh, 0) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+/* ===== ECUALIZADOR ===== */
+.wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+.wave span {
+  width: 3px;
+  height: 28%;
+  border-radius: 2px;
+  background: var(--color-gold-deep);
+  transform-origin: bottom;
+  opacity: 0.5;
+}
+@keyframes eq {
+  0%,
+  100% {
+    height: 22%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+.wave.playing span {
+  opacity: 1;
+  animation: eq 0.95s ease-in-out infinite;
+}
+
+/* ===== BOTONES / TARJETA ===== */
+.btn-bloom {
+  background: linear-gradient(180deg, #f6c233, #c6890b);
+  box-shadow: 0 10px 24px -8px rgba(184, 134, 11, 0.6);
+}
+.btn-bloom:hover {
+  filter: brightness(1.05);
+}
+.btn-bloom:active {
+  transform: translateY(1px);
+}
+.card-soft {
+  box-shadow: 0 30px 60px -30px rgba(120, 80, 0, 0.28),
+    0 8px 24px -12px rgba(0, 0, 0, 0.06);
+}
+a:focus-visible,
+button:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #bouquet.bloom .stem,
+  #bouquet.bloom .leaf,
+  #bouquet.bloom .tulip-grow,
+  #bouquet.bloom .petal,
+  #bouquet.bloom .petal-hi,
+  #bouquet.bloom .bow {
+    animation: none !important;
+  }
+  .bouquet-sway {
+    animation: none !important;
+  }
+  .particle {
+    display: none !important;
+  }
+  .wave.playing span {
+    animation: none !important;
+  }
+}
