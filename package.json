@@ -1,0 +1,16 @@
+{
+  "name": "flores_amarillas",
+  "version": "1.0.0",
+  "description": "Tarjeta de regalo digital - Flores Amarillas (21 de Septiembre)",
+  "private": true,
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify"
+  },
+  "author": "Luis Flores",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
